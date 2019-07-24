@@ -15,8 +15,9 @@ var running = false
 var name1 = " "
 var name2 = " "
  
-var location = " "
-var end = " "
+var location = "St. Louis"
+    var distance = 0
+    var distanceTraveled = 0
     init(author1: String, author2: String, currentLocation: String) {
         name1 = author1
         name2 = author2
@@ -33,13 +34,14 @@ var end = " "
     }
     
     func flyTo(destination : String) {
+    distanceTraveled += data.knownDistances[location]![destination]!
     location = destination
     }
     
-    func distanceTo(target : String, location : String)-> Int {
+    func distanceTo(target : String)-> Int {
 //        knownDistances["St. Louis"]!["Phoenix"]!
     
-        return data.knownDistances["St. Louis"]![target]!
+        return data.knownDistances[location]![target]!
     }
     
     func knownDestinations() -> [String] {
